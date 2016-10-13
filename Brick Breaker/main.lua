@@ -152,7 +152,9 @@ function createPaddle()
 	physics.addBody( paddle, "static", {friction=0, bounce=1.1} )
 
 	local  movePaddle = function(event)
+		if paddle ~= nil then
 			paddle.x = event.x
+		end
 	end
 	Runtime:addEventListener( "touch", movePaddle )
 end
